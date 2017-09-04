@@ -1,7 +1,11 @@
-install: make get-deps
-./configure && make && make test
-language: cpp
-script: scons
-compiler:
-  - clang
-    - gcc
+language: python
+python:
+  - "2.7"
+  - "3.4"
+
+install:
+  - pip install .
+  - pip install -r requirements.txt
+
+script:
+  pytest
